@@ -40,12 +40,15 @@ int main()
     }
     g.output();
     my::vector<bool> h = g;
-    cout << "@"<<(h == g)<<"@";
+    cout << "@"<<(h == g)<<"@"<<endl;
     h.set(true, 30);
     h.set(false,2);
-    h.set(false, 3);
-    cout<<"!!"<<h[2]<<"!!"<<h[3]<<"!!"<<h[30]<<endl;
+    //h.set(false, 3);
+    //cout<<"!!"<<h[2]<<"!!"<<h[3]<<"!!"<<h[30]<<endl;
+    h[2] = true;
+    h[0] = false;
     h.output();
+    cout<< "\n";
     cout<< "@"<<(h != g)<<"@";
     cout<<h.size_of_vector();
     return 0;

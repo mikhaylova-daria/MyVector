@@ -31,7 +31,7 @@
         const int &size_of_vector() const;
         void output () const;
         T &operator [] (const int &pos);
-        const T &operator [] (int pos) const;
+        const T &operator [] (const int &pos) const;
         my::vector<T> &operator = (my::vector<T> const& a);
         bool operator == (my::vector<T> const&a) const;
         bool operator != (my::vector<T> const& a) const;
@@ -41,15 +41,34 @@
         char* p_vector;
         int  size;
         int capacity;
+
+
     public:
+        struct get{
+        char* p_vector;
+        char mask;
+        int pos;
+        void operator =(bool _new){
+            if (_new == false){
+                char ch = p_vector[pos / 8] & (255 - mask);
+                this->p_vector[pos/8] = ch;
+            } else {
+                char ch = p_vector[pos / 8] | mask;
+                this->p_vector[pos/8] = ch;
+            }
+            return;
+        }
+        };
         vector() ;
         vector(const int & _capacity);
         vector (vector const &a);
         ~vector();
         int push_back(bool const &new_);
-        const int &size_of_vector() const;
+        int size_of_vector() const;
         void output() const;
-        int operator [] (const int &pos);
+        get operator [] (const int &pos);
+        bool operator [] (const int &pos) const;
+        //int operator [] (const int &pos);
         void set(const bool &_new, const int &pos);
         my::vector<bool> &operator = (my::vector<bool> const& a);
         bool operator == (my::vector<bool> const&a) const;
