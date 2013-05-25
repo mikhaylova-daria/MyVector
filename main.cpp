@@ -13,24 +13,24 @@ using namespace std;
 
 int main()
 {
-    my::vector<int> a;
-    for (int i=0; i<4;++i) {
-        int n;
-        std::cin>>n;
-        a.push_back(n);
-    }
-    my::vector<int> b(a);
-    a.output();
-    b.output();
-    my::vector<int> c = b;
-    c.output();
-    my::vector<int> l(4);
-    for (int i=0; i<4;++i) {
-        int n;
-        std::cin>>n;
-        l.push_back(n);
-    }
-    l.output();
+//    my::vector<int> a;
+//    for (int i=0; i<4;++i) {
+//        int n;
+//        std::cin>>n;
+//        a.push_back(n);
+//    }
+//    my::vector<int> b(a);
+//    a.output();
+//    b.output();
+//    my::vector<int> c = b;
+//    c.output();
+//    my::vector<int> l(4);
+//    for (int i=0; i<4;++i) {
+//        int n;
+//        std::cin>>n;
+//        l.push_back(n);
+//    }
+//    l.output();
 
    my::vector<bool> g(30);
     for (int i=0; i<30; ++i){
@@ -43,8 +43,9 @@ int main()
     cout << "@"<<(h == g)<<"@"<<endl;
     h.set(true, 30);
     h.set(false,2);
+    bool x = h[2];
     //h.set(false, 3);
-    //cout<<"!!"<<h[2]<<"!!"<<h[3]<<"!!"<<h[30]<<endl;
+    cout<<"!!"<<h[2]<<"!!"<<h[3]<<"!!"<<h[30]<<endl;
     h[2] = true;
     h[0] = false;
     h.output();

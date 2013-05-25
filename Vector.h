@@ -44,10 +44,19 @@
 
 
     public:
-        struct get{
+        class get{
+        public:
         char* p_vector;
         char mask;
         int pos;
+        operator bool () const
+        {
+            if ((this->mask & p_vector[this->pos / 8]) == 0){
+                return false;
+            } else {
+                return true;
+            }
+        }
         void operator =(bool _new){
             if (_new == false){
                 char ch = p_vector[pos / 8] & (255 - mask);
@@ -74,5 +83,7 @@
         bool operator == (my::vector<bool> const&a) const;
         bool operator != (my::vector<bool> const& a)const;
     };
+
+
     #include "Vector2.h"
 #endif
